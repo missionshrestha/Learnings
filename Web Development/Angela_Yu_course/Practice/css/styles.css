@@ -1,19 +1,26 @@
-body {
-  background-color: #eaf6f6;
-  color: black;
+/* *********************TAG SELECTOR*************************** */
+
+h1 {
+  color: red;
+  font-size: 200px;
 }
 
-hr {
-  border-style: none;
-  border-top: dotted;
-  border-color: grey;
-  border-width: 5px;
-  width: 8%;
+img:hover {
+  background-color: gold;
 }
 
-h1{
-    color: #66bfbf;
+/* *********************class SELECTOR*************************** */
+
+.bacon {
+  background-color: red;
 }
-h3{
-    color: #66bfbf;
+
+.apple {
+  background-color: green;
+}
+
+/* *********************id SELECTOR*************************** */
+
+#heading {
+  color: blue;
 }
