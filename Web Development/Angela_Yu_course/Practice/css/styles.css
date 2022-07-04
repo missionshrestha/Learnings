@@ -1,26 +1,42 @@
-/* *********************TAG SELECTOR*************************** */
+body {
+  margin: 0;
+  text-align: center;
+}
 
 h1 {
-  color: red;
-  font-size: 200px;
+  margin-top: 0;
 }
 
-img:hover {
-  background-color: gold;
+/* ******************class******************* */
+.top-container {
+  background-color: #e4f9f5;
+  padding: 20px;
+  position: relative;
 }
-
-/* *********************class SELECTOR*************************** */
-
-.bacon {
+.middle-container {
   background-color: red;
+  height: 200px;
+  width: 200px;
 }
 
-.apple {
-  background-color: green;
+.bottom-container {
+  background-color: blue;
+  height: 200px;
+  width: 200px;
 }
 
-/* *********************id SELECTOR*************************** */
+.learning-text-span {
+  color: red;
+}
 
-#heading {
-  color: blue;
+.top-cloud {
+  position: absolute;
+  left: 55%;
+  top: 25%;
+}
+
+.bottom-cloud {
+  position: absolute;
+  left: 33%;
+  bottom: 55%;
 }
