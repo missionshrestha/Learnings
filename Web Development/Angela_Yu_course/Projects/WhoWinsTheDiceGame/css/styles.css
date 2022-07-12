@@ -1,0 +1,49 @@
+body {
+  background-color: gray;
+  text-align: center;
+}
+
+.Welcome-Message {
+  margin: 0 8% 0 8%;
+  font-family: "Edu TAS Beginner", cursive;
+  font-size: 3rem;
+  font-weight: bold;
+  color: aqua;
+  display: inline-block;
+}
+.Big-Title-Heading {
+  margin-top: 2%;
+  font-family: "Edu TAS Beginner", cursive;
+  font-size: 6rem;
+  font-weight: bold;
+  color: aquamarine;
+}
+
+.Title-container {
+  margin: 0 auto 0 auto;
+  padding: 0;
+}
+.Player-Title {
+  margin: 0 8% 0 8%;
+  font-family: "Edu TAS Beginner", cursive;
+  font-size: 3rem;
+  font-weight: bold;
+  color: aquamarine;
+  display: inline-block;
+}
+
+.Dice-Image-1 {
+  height: 400px;
+  width: 400px;
+  margin: 0px auto 0px auto;
+  display: inline-block;
+  /* background-color: aqua; */
+}
+.Dice-Image-2 {
+  height: 400px;
+  width: 400px;
+  margin: 0px auto 0px auto;
+  display: inline-block;
+
+  /* background-color: red; */
+}
