@@ -1,42 +1,80 @@
 body {
-  background-color: gray;
   text-align: center;
+  background-color: #283149;
 }
 
-.Big-Title-Heading {
-  margin-top: 5%;
-  font-family: "Edu TAS Beginner", cursive;
-  font-size: 6rem;
-  font-weight: bold;
-  color: aquamarine;
+h1 {
+  font-size: 5rem;
+  color: #dbedf3;
+  font-family: "Arvo", cursive;
+  text-shadow: 3px 0 #da0463;
 }
 
-.Title-container{
-  margin: 0 auto 0 auto;
-  padding: 0;
-}
-.Player-Title{
-margin: 0 8% 0 8%;
-  font-family: "Edu TAS Beginner", cursive;
-  font-size: 3rem;
-  font-weight: bold;
-  color: aquamarine;
-  display:inline-block;
-
+footer {
+  color: #dbedf3;
+  font-family: sans-serif;
 }
 
-.Dice-Image-1 {
-  height: 400px;
-  width: 400px;
-  margin: 0px auto 0px auto;
-  display:inline-block;
-  /* background-color: aqua; */
+.w {
+  background-image: url("/Web Development/Angela_Yu_course/Practice/assets/Images/Drum-images/tom1.png");
 }
-.Dice-Image-2 {
-  height: 400px;
-  width: 400px;
-  margin: 0px auto 0px auto;
-  display:inline-block;
 
-  /* background-color: red; */
+.a {
+  background-image: url("/Web Development/Angela_Yu_course/Practice/assets/Images/Drum-images/tom2.png");
+}
+
+.s {
+  background-image: url("/Web Development/Angela_Yu_course/Practice/assets/Images/Drum-images/tom3.png");
+}
+
+.d {
+  background-image: url("/Web Development/Angela_Yu_course/Practice/assets/Images/Drum-images/tom4.png");
+}
+
+.j {
+  background-image: url("/Web Development/Angela_Yu_course/Practice/assets/Images/Drum-images/snare.png");
+}
+
+.k {
+  background-image: url("/Web Development/Angela_Yu_course/Practice/assets/Images/Drum-images/crash.png");
+}
+
+.l {
+  background-image: url("/Web Development/Angela_Yu_course/Practice/assets/Images/Drum-images/kick.png");
+}
+
+.set {
+  margin: 10% auto;
+}
+
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}
+
+.pressed {
+  box-shadow: 0 3px 4px 0 #dbedf3;
+  opacity: 0.5;
+}
+
+.red {
+  color: red;
+}
+
+.drum {
+  outline: none;
+  border: 10px solid #404b69;
+  font-size: 5rem;
+  font-family: "Arvo", cursive;
+  line-height: 2;
+  font-weight: 900;
+  color: #da0463;
+  text-shadow: 3px 0 #dbedf3;
+  border-radius: 15px;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  margin: 10px;
+  background-color: white;
 }
