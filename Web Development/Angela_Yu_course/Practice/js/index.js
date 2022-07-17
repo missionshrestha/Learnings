@@ -7,11 +7,13 @@ for (let index = 0; index < numberOfDrimButtons; index++) {
 
         var buttonInnerHtml = this.innerHTML;
         selectSound(buttonInnerHtml);
+        buttonAnimation(buttonInnerHtml);
     });
 }
 
 document.addEventListener("keypress", function (event) {
     selectSound(event.key);
+    buttonAnimation(event.key);
 
 })
 
@@ -52,6 +54,17 @@ function selectSound(key) {
             break;
     }
 
+}
+
+
+function buttonAnimation(currentKey) {
+    console.log(currentKey)
+    var activeButton = document.querySelector("." + currentKey);
+    activeButton.classList.add("pressed");
+
+    setTimeout(function () {
+        activeButton.classList.remove("pressed")
+    }, 200);
 }
 
 
