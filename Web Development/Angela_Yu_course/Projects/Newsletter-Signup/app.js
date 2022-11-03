@@ -10,14 +10,14 @@ const { resolve } = require("path");
 // e92cf06549
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
-const port = 3000;
+const localPort = 3000;
 
 //helps to load everything inside assets folder  
 app.use('/assets', express.static('assets'));
 
-
-app.listen(port, function () {
-    console.log(`Server is running on port: ${port}`);
+//listens to both local port & heroku
+app.listen(localPort || process.env.PORT, function () {
+    console.log(`Server is running on port: ${localPort}`);
 });
 
 app.get("/", function (req, res) {
