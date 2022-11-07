@@ -12,5 +12,16 @@
     <% } else { %>
     <h1 style="color: red"><%= kindOfDay %> ToDo Lists</h1>
     <% }%>
+
+    <form action="/" method="post">
+      <input type="text" name="newItem" id="" placeholder="Enter what to Do!" />
+      <button type="submit">Add List</button>
+    </form>
+    <ul>
+      <% for( let index = 0; index < newItemListArray.length; index++ ) { %>
+
+      <li><%= newItemListArray[index] %></li>
+      <% } %>
+    </ul>
   </body>
 </html>
