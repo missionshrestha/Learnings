@@ -4,21 +4,23 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 const app = express();
-var addedItemArray = ["First Task"];//will be used in both app.get & app.post
+let addedItemArray = ["First Task"];//will be used in both app.get & app.post
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(express.static("public"));
+
 app.get("/", function (req, res) {
 
-    var today = new Date();
-    var options = {
+    let today = new Date();
+    let options = {
         weekday: 'long',
         year: 'numeric',
         month: 'long',
         day: 'numeric'
     };
-    var date = today.toLocaleDateString("en-US", options); // Saturday, September 17, 2016
+    let date = today.toLocaleDateString("en-US", options); // Saturday, September 17, 2016
 
     //this list file must be inside views for render to work
     res.render(
