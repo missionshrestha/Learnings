@@ -1,35 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ToDo List</title>
+<%- include('header'); -%>
 
-    <link rel="stylesheet" href="../css/styles.css" />
-  </head>
-  <body>
-    <div class="box" id="heading">
-      <% if (kindOfDay==="Saturday"||kindOfDay==="Sunday") { %>
-      <h1 style="color: blue"><%= kindOfDay %> ToDo Lists</h1>
-      <% } else { %>
-      <h1 style="color: red"><%= kindOfDay %> ToDo Lists</h1>
-      <% }%>
-    </div>
+<div class="box" id="heading">
+  <% if (listTitle==="Saturday"||listTitle==="Sunday") { %>
+  <h1 style="color: blue"><%= listTitle %> ToDo Lists</h1>
+  <% } else { %>
+  <h1 style="color: red"><%= listTitle %> ToDo Lists</h1>
+  <% }%>
+</div>
 
-    <div class="box">
-      <% for( let index = 0; index < newItemListArray.length; index++ ) { %>
-      <div class="item">
-        <input type="checkbox" name="" id="" />
-        <p><%= newItemListArray[index] %></p>
-      </div>
-      <% } %>
-      <form action="/" class="item" method="post">
-        <input type="text" name="newItem" id="" placeholder="Enter what to Do!" autocomplete="on"/>
-        <button type="submit">+</button>
-      </form>
-    </div>
+<div class="box">
+  <% for( let index = 0; index < newItemListArray.length; index++ ) { %>
+  <div class="item">
+    <input type="checkbox" name="" id="" />
+    <p><%= newItemListArray[index] %></p>
+  </div>
+  <% } %>
+  <form action="/" class="item" method="post">
+    <input
+      type="text"
+      name="newItem"
+      id=""
+      placeholder="Enter what to Do!"
+      autocomplete="on"
+    />
+    <button type="submit" name="list" value="<%= listTitle %>">+</button>
+  </form>
+</div>
 
-   
-  </body>
-</html>
+<%- include('footer'); -%>
