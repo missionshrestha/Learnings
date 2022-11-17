@@ -2,10 +2,16 @@
 
 const express = require("express");
 const bodyParser = require("body-parser");
+const date = require(__dirname + "/date.js");
+
+
 
 const app = express();
-let addedItemArray = ["First Task"];//will be used in both app.get & app.post
-let workItemArray = ["Work 1"];
+
+//we need to use date() ro run function
+const addedItemArray = ["First Task"];//will be used in both app.get & app.post
+const workItemArray = ["Work 1"];
+//here const is used, so pushing new value is only allowed but assigning new item is not allowed
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -13,27 +19,21 @@ app.use(express.static("public"));
 
 app.get("/", function (req, res) {
 
-    let today = new Date();
-    let options = {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-    };
-    let date = today.toLocaleDateString("en-US", options); // Saturday, September 17, 2016
+    let currentDate = date.getDate();
+    // let currentDate = date.getDay();
 
     //this list file must be inside views for render to work
     res.render(
         'list',
         {
-            listTitle: date + " Home ",
+            listTitle: currentDate + " Home ",
             newItemListArray: addedItemArray
         });
-    //we pass date,addedItem to kindOfDay, newListItem present in list.ejs
+    //we pass currentDate,addedItem to kindOfDay, newListItem present in list.ejs
 });
 
 app.post("/", function (req, res) {
-console.log(req.body)
+    console.log(req.body)
     addedItem = req.body.newItem;//must use app.use(bodyParser.urlencoded({ extended: true }));
     console.log(addedItem);
     if (req.body.list == "Work List") {
@@ -71,7 +71,7 @@ app.get("/work", function (req, res) {
     res.redirect("/work");
 }); */
 
-app.get('/about',function (req,res) {
+app.get('/about', function (req, res) {
     res.render(
         'about'
     )
