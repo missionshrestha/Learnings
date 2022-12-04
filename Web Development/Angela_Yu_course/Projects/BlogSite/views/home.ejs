@@ -4,10 +4,13 @@
 
 <p><%=homeStartingContent %></p>
 
+<% posts.forEach(function(post){ %>
 
+<h1><%=post.title%></h1>
+<p>
+  <%=post.content.substring(0,100)+"..."%>
 
-<% for(var i=0;i<posts.length; i++ ){ %>
-    <%  console.log(posts[i].title);%>
-    <%} ;%>
+  <a href="/posts/<%=  post.title%> "> Read More</a>
 
-<%-include('partials/footer'); -%>
+  < /p> <%})%>; <%-include('partials/footer'); -%>
+</p>
