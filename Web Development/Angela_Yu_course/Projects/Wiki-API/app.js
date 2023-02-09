@@ -23,14 +23,121 @@ const articleSchema = {
 
 const Article = mongoose.model("Article", articleSchema);
 
-app.get("/articles", function (req, res) {
+// Route for all articles 
+app.route("/articles")
 
-    Article.find({}, function (err, foundArticles) {
-        res.send(foundArticles);
+    .get(function (req, res) {
+
+        Article.find({}, function (err, foundArticles) {
+
+            if (!err) {
+
+                res.send(foundArticles);
+            }
+
+            else {
+                res.send(err)
+            }
+
+        })
+    })
+
+    .post(function (req, res) {
+
+        const newArticle = new Article({
+            title: req.body.title,
+            content: req.body.content,
+        })
+
+        newArticle.save(function (err) {
+            if (!err) {
+                res.send("Successfully added a new article.")
+            }
+
+            else {
+                res.send(err)
+            }
+
+        });
 
     })
-})
 
+    .delete(function (req, res) {
+
+        Article.deleteMany(
+            {}, function (err) {
+                if (!err) {
+
+                    res.send("Successfully delete")
+                }
+                else {
+                    res.send(err)
+                }
+            }
+        )
+
+
+    })
+
+
+// Route for specific articles 
+
+app.route("/articles/:articleTitle")
+
+    //get info about sepecific article
+    .get(function (req, res) {
+
+        Article.findOne({ title: req.params.articleTitle }, function (err, foundArticle) {
+
+            if (foundArticle) {
+                res.send(foundArticle)
+            }
+            else {
+                res.send("No article matched")
+
+            }
+
+        })
+    })
+
+
+    //update a specific article
+    .put(function (req, res) {
+        Article.updateOne(
+            { title: req.params.articleTitle },
+            { title: req.body.title, content: req.body.content },
+            function name(err) {
+                if (!err) {
+
+                    res.send("Successfully updated")
+                }
+
+                else {
+                    console.log(err)
+                    console.log(req.body.title);
+                    res.send("Failed to update")
+                }
+
+            }
+        )
+    })
+
+    .delete(function (req, res) {
+
+        Article.deleteOne(
+            { title: req.params.articleTitle }, function (err) {
+                if (!err) {
+
+                    res.send("Successfully delete")
+                }
+                else {
+                    res.send(err)
+                }
+            }
+        )
+
+
+    })
 
 
 
